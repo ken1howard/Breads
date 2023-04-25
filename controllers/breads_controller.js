@@ -5,7 +5,10 @@ const Bread = require('../models/breads.js');
 
 //Index - Read All
 breads.get('/', (req, res) => {
-    res.send(Breads);
+  //  res.send(Breads);
+    res.render('index', {
+        breads: Bread,
+    });
 });
 
 

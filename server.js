@@ -8,6 +8,12 @@ console.log (PORT);
 
 const app = express();
 
+//Middlewear
+// MIDDLEWARE
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
+
 //Routes
 
 app.get('/', (req, res) => {
