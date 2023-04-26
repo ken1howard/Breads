@@ -9,14 +9,17 @@ function Index ({breads}) {
         <h2>Index Page</h2>
         <ul>
         {
-    breads.map((bread, index)=> {
+  breads.map((bread, index)=> {
     return (
       <li key={index}>
-        {bread.name}
+        <a href={`/breads/${index}`}>
+          {bread.name}
+        </a>
       </li>
     )
   })
 }
+
 
         </ul>
       </Default>
