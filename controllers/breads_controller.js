@@ -1,5 +1,6 @@
 const express = require("express");
 const breads = express.Router();
+const Baker = require('../models/baker.js');
 
 const Bread = require("../models/breads");
 
@@ -12,6 +13,17 @@ breads.get("/", (req, res) => {
         });
     });
 });
+
+// in the new route
+breads.get('/new', (req, res) => {
+    Baker.find()
+        .then(foundBakers => {
+            res.render('new', {
+                bakers: foundBakers
+            });
+      });
+});
+
 
 // NEW Bread Form
 breads.get("/new", (req, res) => {
